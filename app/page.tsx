@@ -1,6 +1,9 @@
 import Header from '@/components/Header';
+import Project from '@/components/Project';
+import { getProjects } from '@/data/projects';
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
   return (
     <>
       <Header />
@@ -24,6 +27,14 @@ export default function Home() {
             using Nextjs 14 and TypeScript. In my free time I like to watch
             anime, read manga and listen to music.
           </p>
+
+          <h2 className="text-2xl font-bold mb-2">Projects</h2>
+          <section className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-x-6 mb-6">
+            {projects.map((project) => (
+              <Project {...project} />
+            ))}
+          </section>
+          
         </section>
       </main>
     </>
