@@ -38,4 +38,8 @@ body {
     -ms-user-select: none;
     user-select: none;
   }
+
+  .underline-gray {
+    @apply underline underline-offset-4 decoration-neutral-600 decoration-2;
+  }
 }

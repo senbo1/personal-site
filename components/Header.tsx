@@ -27,6 +27,7 @@ const Header: React.FC = () => {
     }
 
     intervalRef.current = setInterval(() => {
+      if (headingRef.current === null) return;
       headingRef.current!.innerText = name
         .split('')
         .map((_, index) => {
@@ -52,10 +53,16 @@ const Header: React.FC = () => {
 
   return (
     <header className="flex items-center my-4">
-      <h1
-        className="text-xl font-bold cursor-pointer select-none"
-      >
-        <Link href="https://twitter.com/senbodev" rel='noopener noreferrer' target='_blank' onMouseEnter={handleMouseEnter} ref={headingRef}>Senbo</Link>
+      <h1 className="text-xl font-bold cursor-pointer select-none">
+        <Link
+          href="https://twitter.com/senbodev"
+          rel="noopener noreferrer"
+          target="_blank"
+          onMouseEnter={handleMouseEnter}
+          ref={headingRef}
+        >
+          Senbo
+        </Link>
       </h1>
     </header>
   );
