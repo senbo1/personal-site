@@ -25,3 +25,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+::selection {
+  background-color: #525252;
+}
+
+@layer utilities {
+  .hover-transition {
+    @apply hover:bg-neutral-50 hover:text-neutral-950 transition-all duration-200;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
