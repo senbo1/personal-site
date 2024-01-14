@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Project from '@/components/Project';
+import Spotify from '@/components/Spotify/Spotify';
 import { getProjects } from '@/data/projects';
 
 export default async function Home() {
@@ -18,23 +19,24 @@ export default async function Home() {
             I am currently building a{' '}
             <a
               href="https://github.com/senbo1/twitter-clone"
-              className="underline underline-offset-4 decoration-neutral-600 decoration-2 hover-transition"
+              className="underline-gray hover:decoration-slate-200 transition-all"
               target="_blank"
               rel="noopener noreferrer"
             >
               Twitter/X Clone
             </a>{' '}
-            using Nextjs 14 and TypeScript. In my free time I like to watch
+            using Nextjs and TypeScript. In my free time I like to watch
             anime, read manga and listen to music.
           </p>
 
           <h2 className="text-2xl font-bold mb-2">Projects</h2>
-          <section className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-x-6 mb-6">
+          <section className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-x-6 mb-2">
             {projects.map((project) => (
-              <Project {...project} />
+              <Project {...project} key={project.link}/>
             ))}
           </section>
-          
+        
+        <Spotify />
         </section>
       </main>
     </>
