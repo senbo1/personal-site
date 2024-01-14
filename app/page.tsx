@@ -38,7 +38,7 @@ export default async function Home() {
           ))}
         </section>
 
-        <Spotify />
+        {/* <Spotify /> */}
       </main>
       <Footer />
     </>
