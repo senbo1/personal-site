@@ -52,7 +52,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="flex items-center my-4">
+    <header className="flex items-center justify-between my-4">
       <h1 className="text-xl font-bold cursor-pointer select-none">
         <Link
           href="https://twitter.com/senbodev"
@@ -64,6 +64,15 @@ const Header: React.FC = () => {
           Senbo
         </Link>
       </h1>
+
+      <Link
+        href="https://dev.to/senbo"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline-gray font-semibold"
+      >
+        blog
+      </Link>
     </header>
   );
 };
