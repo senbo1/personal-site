@@ -19,6 +19,7 @@ async function getAccessToken(): Promise<{ access_token: string }> {
       grant_type: 'refresh_token',
       refresh_token: refreshToken,
     }),
+    cache: 'no-store',
   });
 
 
@@ -44,6 +45,7 @@ export async function getCurrentlyPlayingSong(): Promise<CurrentSongAction> {
       headers: {
         Authorization: `Bearer ${accesstoken}`,
       },
+      cache: 'no-store',
     }
   );
 

@@ -40,6 +40,6 @@ body {
   }
 
   .underline-gray {
-    @apply underline underline-offset-4 decoration-neutral-600 decoration-2;
+    @apply underline underline-offset-4 decoration-neutral-600 decoration-2 hover:decoration-white transition duration-200;
   }
 }

@@ -8,7 +8,7 @@ export const getProjects = async (): Promise<Project[]> => {
   return [
     {
       name: 'twitter-clone',
-      description: 'Twitter clone made with Nextjs 14, shadcn/ui, and postgres',
+      description: 'Twitter clone made with Nextjs, shadcn/ui, and postgres',
       link: 'https://github.com/senbo1/twitter-clone',
     },
     {

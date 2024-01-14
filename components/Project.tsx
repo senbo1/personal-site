@@ -10,7 +10,7 @@ const Project: React.FC<ProjectProps> = ({ name, description, link }) => {
   return (
     <div className="flex flex-col gap-2">
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <h2 className="font-bold flex items-center gap-1 hover-transition underline-gray">
+        <h2 className="font-bold flex items-center gap-1 underline-gray">
           <GoRepo className="h-4" />
           {name}
         </h2>

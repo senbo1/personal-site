@@ -9,6 +9,8 @@ import Music from './Music';
 import { FaSpotify } from 'react-icons/fa';
 import { getCurrentlyPlayingSong } from '@/actions/spotify';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import wallpaper from '@/public/wall.jpg';
 
 const Spotify: FC = () => {
   const [song, setSong] = useState<Song>();
@@ -22,6 +24,7 @@ const Spotify: FC = () => {
         if (res.status === 204) {
           setSong(undefined);
         } else if (res.status === 429) {
+          setSong(undefined);
           await new Promise((resolve) => setTimeout(resolve, 1000));
         } else if (res.status === 200) {
           const data = res.data as Song;
@@ -43,29 +46,29 @@ const Spotify: FC = () => {
 
   if (!song) {
     return (
-      <section className="flex flex-col gap-1 my-2">
-        <h2 className="font-bold flex items-center gap-2 underline-gray hover-transition">
+      <section className="flex flex-col gap-1">
+        <h2 className="font-bold flex items-center gap-2 underline-gray">
           <FaSpotify className="h-6 ml-1" />
           Nothing Playing Right now!
         </h2>
         <div className="flex justify-center">
-          <img src="/wall.jpg" alt="Chill Clouds Image" className="w-full" />
+          <Image src={wallpaper} alt="Chill Clouds Image"/>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="flex flex-col gap-2 my-3">
+    <section className="flex flex-col gap-2">
       {song.previewUrl === null && showModal && (
         <Modal onClose={handleModalClose} />
       )}
-      <h2 className="font-bold flex items-center gap-2 underline underline-offset-4 decoration-neutral-500 hover-transition group">
-        <FaSpotify className="h-6 ml-1 fill-green-600 group-hover:fill-neutral-900 duration-200" />
+      <h2 className="font-bold flex items-center gap-2 underline-gray cursor-default">
+        <FaSpotify className="h-6 ml-1 fill-green-600 duration-200" />
         Currently {song.isCurrentlyPlaying ? 'Listening' : 'Paused'}
       </h2>
       <div className="flex">
-        <img
+        <Image
           src={song.album.image}
           alt="Album cover"
           width={60}
@@ -75,7 +78,7 @@ const Spotify: FC = () => {
         <div className="flex flex-col justify-between w-full">
           <div className="flex justify-between px-2">
             <a
-              className="font-mono tracking-tight flex flex-col ml-2 w-[140px] overflow-hidden"
+              className="font-mono tracking-tight flex flex-col ml-2 w-1/3 overflow-hidden"
               href={song.externalUrl}
               target="_blank"
             >
@@ -91,9 +94,10 @@ const Spotify: FC = () => {
               </span>
             </a>
             <Music song={song} setShowModal={setShowModal} />
-            <Playback
+            <Playback 
               progress_ms={song.progress_ms}
               duration_ms={song.duration_ms}
+              className='w-1/3 flex justify-end'
             />
           </div>
           <ProgressBar progress={song.currentProgress} />

@@ -20,7 +20,7 @@ const Music: FC<MusicProps> = ({ song, setShowModal }) => {
         setAudio(null);
       }
     };
-  }, []);
+  }, [audio]);
 
   const downloadAndPlayPause = useCallback(() => {
     if (fetching) return; // prevent multiple fetches
@@ -61,7 +61,7 @@ const Music: FC<MusicProps> = ({ song, setShowModal }) => {
     } else if (audio && audio.paused) {
       audio.play();
     }
-  }, [song?.previewUrl, audio, fetching]);
+  }, [song, audio, fetching, setShowModal]);
   
   return (
     <button onClick={downloadAndPlayPause}>
