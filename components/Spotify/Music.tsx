@@ -1,4 +1,4 @@
-import { type FC, useCallback, useState, useEffect } from 'react';
+import { type FC, useCallback, useState, useEffect, useRef } from 'react';
 import type { Song } from '@/lib/types';
 import { FaPause } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
@@ -10,7 +10,7 @@ interface MusicProps {
 
 const Music: FC<MusicProps> = ({ song, setShowModal }) => {
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [fetching, setFetching] = useState<boolean>(false);
+  const fetchingRef = useRef<boolean>(false);
 
   useEffect(() => {
     return () => {
@@ -23,7 +23,7 @@ const Music: FC<MusicProps> = ({ song, setShowModal }) => {
   }, [audio]);
 
   const downloadAndPlayPause = useCallback(() => {
-    if (fetching) return; // prevent multiple fetches
+    if (fetchingRef.current) return; // prevent multiple fetches
 
     // if song has changed 
     if (song && (!audio || (audio && song.title !== audio.title))) {
@@ -41,7 +41,7 @@ const Music: FC<MusicProps> = ({ song, setShowModal }) => {
         return;
       }
 
-      setFetching(true); // set fetching to true
+      fetchingRef.current = true; // set fetching to true
       
       fetch(song.previewUrl)
         .then((res) => res.blob())
@@ -53,7 +53,7 @@ const Music: FC<MusicProps> = ({ song, setShowModal }) => {
           if (!wasPlaying) {
             newAudio.play();
           }
-          setFetching(false);
+          fetchingRef.current = false;
           setAudio(newAudio);
         });
     } else if (audio && !audio.paused) {
@@ -61,7 +61,7 @@ const Music: FC<MusicProps> = ({ song, setShowModal }) => {
     } else if (audio && audio.paused) {
       audio.play();
     }
-  }, [song, audio, fetching, setShowModal]);
+  }, [song, audio, setShowModal]);
   
   return (
     <button onClick={downloadAndPlayPause}>

@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'min-h-screen max-w-prose mx-auto py-2 px-3',
+          'min-h-screen max-w-prose mx-auto py-2 px-3 dark',
           ps.className
         )}
       >
