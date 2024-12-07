@@ -1,4 +1,5 @@
 import Name from '@/components/Name';
+import Projects from '@/components/Projects';
 import { Badge } from '@/components/ui/badge';
 
 export default function Home() {
@@ -37,6 +38,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <Projects />
       </div>
     </main>
   );
