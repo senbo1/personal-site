@@ -20,7 +20,7 @@ const projects = [
   {
     title: 'Stream Mate',
     description:
-      'A WebRTC video chat app with screen sharing, using the Perfect Negotiation Method for seamless, high-quality communication and reliable connection handling across devices.',
+      'A WebRTC video chat app with screen sharing, using the Perfect Negotiation Method for seamless, high-quality communication.',
     demoUrl: 'https://stream-mate.vercel.app/',
     codeUrl: 'https://github.com/senbo1/StreamMate',
   },
@@ -45,16 +45,18 @@ const Projects = () => {
               <CardDescription>{project.description}</CardDescription>
             </CardContent>
             <CardFooter className="flex gap-4">
-              <Button variant="outline" size="sm" asChild>
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Demo
-                </a>
-              </Button>
+              {project.demoUrl && (
+                <Button variant="outline" size="sm" asChild>
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Demo
+                  </a>
+                </Button>
+              )}
               <Button variant="outline" size="sm" asChild>
                 <a
                   href={project.codeUrl}
@@ -62,7 +64,7 @@ const Projects = () => {
                   rel="noopener noreferrer"
                 >
                   <Github className="mr-2 h-4 w-4" />
-                  Source
+                  Code
                 </a>
               </Button>
             </CardFooter>

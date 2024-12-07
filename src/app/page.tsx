@@ -1,3 +1,4 @@
+import Contact from '@/components/Contact';
 import Name from '@/components/Name';
 import Projects from '@/components/Projects';
 import { Badge } from '@/components/ui/badge';
@@ -40,6 +41,8 @@ export default function Home() {
         </section>
 
         <Projects />
+
+        <Contact />
       </div>
     </main>
   );
