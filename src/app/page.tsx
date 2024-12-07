@@ -1,4 +1,5 @@
 import Name from '@/components/Name';
+import { Badge } from '@/components/ui/badge';
 
 export default function Home() {
   return (
@@ -13,6 +14,28 @@ export default function Home() {
             I love creating fast, responsive, and user-friendly web applications
             using Next.js and React.
           </p>
+        </section>
+
+        {/* Skills */}
+        <section className="mb-12">
+          <h3 className="text-2xl font-semibold mb-4">Skills</h3>
+          <div className="flex flex-wrap gap-2">
+            {[
+              'Next.js',
+              'React',
+              'TypeScript',
+              'Tailwind CSS',
+              'Node.js',
+              'REST APIs',
+              'PostgreSQL',
+              'MongoDB',
+              'Git',
+            ].map((skill) => (
+              <Badge key={skill} variant="secondary">
+                {skill}
+              </Badge>
+            ))}
+          </div>
         </section>
       </div>
     </main>
