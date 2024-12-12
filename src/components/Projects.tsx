@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from './ui/card';
 import BlurFade from './ui/blur-fade';
-import { BLUR_FADE_DELAY } from '@/app/page';
+import { BLUR_FADE_DELAY } from '@/app/constants';
 
 type Project = {
   title: string;

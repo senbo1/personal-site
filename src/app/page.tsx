@@ -1,31 +1,26 @@
 import Contact from '@/components/Contact';
 import Name from '@/components/Name';
 import Projects from '@/components/Projects';
-import { ThemeToggle } from '@/components/Theme/ThemeToggle';
 import { Badge } from '@/components/ui/badge';
 import BlurFade from '@/components/ui/blur-fade';
-
-export const BLUR_FADE_DELAY = 0.04;
+import { BLUR_FADE_DELAY } from './constants';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-10 sm:p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm">
-        <header>
-          <ThemeToggle />
-        </header>
+      <div className="z-10 w-full max-w-4xl items-center justify-between font-mono text-sm">
         <BlurFade delay={BLUR_FADE_DELAY}>
           <Name />
         </BlurFade>
 
         <BlurFade delay={BLUR_FADE_DELAY * 2}>
-          <h2 className="text-2xl mb-4 text-center">Next.js Developer</h2>
+          <h2 className="text-2xl mb-4">Next.js Developer</h2>
         </BlurFade>
 
         {/* Introduction */}
         <section className="mb-12">
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
-            <p className="text-xl text-center">
+            <p className="text-lg">
               I love creating fast, responsive, and user-friendly web
               applications using Next.js and React.
             </p>
