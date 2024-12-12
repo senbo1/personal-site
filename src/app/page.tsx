@@ -1,20 +1,29 @@
-import Contact from '@/components/Contact';
 import Name from '@/components/Name';
 import Projects from '@/components/Projects';
 import { Badge } from '@/components/ui/badge';
 import BlurFade from '@/components/ui/blur-fade';
 import { BLUR_FADE_DELAY } from './constants';
+import MainDock from '@/components/MainDock';
 
 export default function Home() {
+  const skills = [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Tailwind CSS',
+    'Node.js',
+    'REST APIs',
+    'PostgreSQL',
+    'MongoDB',
+    'Docker',
+  ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-10 sm:p-24">
       <div className="z-10 w-full max-w-4xl items-center justify-between font-mono text-sm">
-        <BlurFade delay={BLUR_FADE_DELAY}>
-          <Name />
-        </BlurFade>
+        <Name />
 
         <BlurFade delay={BLUR_FADE_DELAY * 2}>
-          <h2 className="text-2xl mb-4">Next.js Developer</h2>
+          <h2 className="text-xl mb-4">Next.js/Web Developer</h2>
         </BlurFade>
 
         {/* Introduction */}
@@ -33,17 +42,7 @@ export default function Home() {
             <h3 className="text-2xl font-semibold mb-4">Skills</h3>
           </BlurFade>
           <div className="flex flex-wrap gap-2">
-            {[
-              'Next.js',
-              'React',
-              'TypeScript',
-              'Tailwind CSS',
-              'Node.js',
-              'REST APIs',
-              'PostgreSQL',
-              'MongoDB',
-              'Docker',
-            ].map((skill, id) => (
+            {skills.map((skill, id) => (
               <BlurFade delay={BLUR_FADE_DELAY * 4 + id * 0.05} key={skill}>
                 <Badge variant="secondary">{skill}</Badge>
               </BlurFade>
@@ -53,9 +52,11 @@ export default function Home() {
 
         <Projects />
 
-        <BlurFade delay={BLUR_FADE_DELAY * 6}>
+        {/* <BlurFade delay={BLUR_FADE_DELAY * 6}>
           <Contact />
-        </BlurFade>
+        </BlurFade> */}
+
+        <MainDock />
       </div>
     </main>
   );
