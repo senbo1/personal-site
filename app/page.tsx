@@ -1,5 +1,22 @@
+import BlogCard from '@/components/BlogCard';
 import { Nav } from '@/components/Nav';
-import { ThemeToggler } from '@/components/ui/ThemeToggler';
+import ProjectCard from '@/components/ProjectCard';
+import { blogs, projects } from '@/lib/data';
+
+const links = [
+  {
+    title: 'Twitter',
+    link: 'https://x.com/senbodev',
+  },
+  {
+    title: 'Github',
+    link: 'https://github.com/senbo1',
+  },
+  {
+    title: 'Email',
+    link: 'mailto:senbodev@gmail.com',
+  },
+];
 
 export default function Home() {
   return (
@@ -13,14 +30,36 @@ export default function Home() {
             and <span className="italic text-green-500">efficient</span> full
             stack applications.
           </h2>
-          <p>
-            Stack - TypeScript, Golang, Next.js, React, Node.js, PostgreSQL,
-            Prisma, Drizzle, Docker
-          </p>
+          <div className="flex gap-2">
+            {links.map((link) => (
+              <a
+                href={link.link}
+                target="_blank"
+                key={link.title}
+                className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200"
+              >
+                {link.title}
+              </a>
+            ))}
+          </div>
         </section>
 
         <section className="pt-20">
-          <h2 className="text-xl text-center font-bold">Projects</h2>
+          <h2 className="text-xl text-center font-bold mb-5">Projects</h2>
+          <div className="flex flex-col gap-5">
+            {projects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </div>
+        </section>
+
+        <section className="pt-20">
+          <h2 className="text-xl text-center font-bold mb-5">Blogs</h2>
+          <div className="flex flex-col gap-5">
+            {blogs.map((blog) => (
+              <BlogCard key={blog.title} {...blog} />
+            ))}
+          </div>
         </section>
       </main>
     </>

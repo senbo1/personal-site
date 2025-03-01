@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.className} antialiased min-h-screen max-w-prose mx-auto`}
+        className={`${poppins.className} antialiased min-h-screen max-w-prose mx-auto px-4 sm:px-0 transition-all duration-200`}
       >
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
