@@ -1,29 +1,14 @@
 import BlogCard from '@/components/BlogCard';
 import { Nav } from '@/components/Nav';
 import ProjectCard from '@/components/ProjectCard';
-import { blogs, projects } from '@/lib/data';
-
-const links = [
-  {
-    title: 'Twitter',
-    link: 'https://x.com/senbodev',
-  },
-  {
-    title: 'Github',
-    link: 'https://github.com/senbo1',
-  },
-  {
-    title: 'Email',
-    link: 'mailto:senbodev@gmail.com',
-  },
-];
+import { blogs, links, projects } from '@/lib/data';
 
 export default function Home() {
   return (
     <>
       <Nav />
       <main>
-        <section className="flex flex-col gap-2">
+        <section className="flex flex-col gap-2 items-start xs:items-center">
           <h1 className="text-4xl font-bold">Hi, I am harsh</h1>
           <h2 className="text-lg font-medium">
             I love building <span className="italic text-red-500">fast</span>{' '}

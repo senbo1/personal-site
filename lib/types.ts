@@ -9,3 +9,8 @@ export type Blog = {
   link: string;
   date: string;
 };
+
+export type Link = {
+  title: string;
+  link: string;
+};
