@@ -1,4 +1,4 @@
-import { Blog, Project } from './types';
+import { Blog, Link, Project } from './types';
 
 export const projects = [
   {
@@ -25,3 +25,18 @@ export const blogs = [
     date: 'July 11, 2023',
   },
 ] satisfies Blog[];
+
+export const links = [
+  {
+    title: 'Twitter',
+    link: 'https://x.com/senbodev',
+  },
+  {
+    title: 'Github',
+    link: 'https://github.com/senbo1',
+  },
+  {
+    title: 'Email',
+    link: 'mailto:senbodev@gmail.com',
+  },
+] satisfies Link[];
