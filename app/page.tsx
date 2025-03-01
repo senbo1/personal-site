@@ -35,6 +35,11 @@ export default function Home() {
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
+            <ProjectCard
+              title="more projects cooking"
+              description="loading..."
+              link="https://github.com/senbo1"
+            />
           </div>
         </section>
 
