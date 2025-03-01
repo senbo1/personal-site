@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'senbo',
-  description: 'I write code',
+  description: 'hi,   I write code',
 };
 
 export default function RootLayout({
@@ -20,6 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="dd597590-0916-4eb8-9165-adef5e109cb8"
+        ></script>
+      </head>
       <body
         className={`${poppins.className} antialiased min-h-screen max-w-prose mx-auto px-4 md:px-0 duration-200`}
       >
