@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Script from 'next/script';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -20,13 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="dd597590-0916-4eb8-9165-adef5e109cb8"
-        ></script>
-      </head>
+      <Script
+        strategy="afterInteractive"
+        src="https://cloud.umami.is/script.js"
+        data-website-id="dd597590-0916-4eb8-9165-adef5e109cb8"
+      />
       <body
         className={`${poppins.className} antialiased min-h-screen max-w-prose mx-auto px-4 md:px-0 duration-200`}
       >
