@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <section className="flex flex-col gap-2 items-start xs:items-center">
+        <section className="flex flex-col gap-2 items-start">
           <h1 className="text-4xl font-bold">Hi, I am harsh</h1>
           <h2 className="text-lg font-medium">
             I love building <span className="italic text-red-500">fast</span>{' '}
@@ -29,21 +29,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pt-20">
+        <section className="mt-20">
           <h2 className="text-xl text-center font-bold mb-5">Projects</h2>
           <div className="flex flex-col gap-5">
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
-            <ProjectCard
-              title="more projects cooking"
-              description="loading..."
-              link="https://github.com/senbo1"
-            />
           </div>
         </section>
 
-        <section className="pt-20">
+        <section className="mt-20">
           <h2 className="text-xl text-center font-bold mb-5">Blogs</h2>
           <div className="flex flex-col gap-5">
             {blogs.map((blog) => (

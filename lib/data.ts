@@ -4,12 +4,16 @@ export const projects = [
   {
     title: 'Katen Chart',
     description: 'your favourite seasonal anime tracker',
-    link: 'https://katen-chart.vercel.app',
+    demoUrl: 'https://katen-chart.vercel.app',
+    githubUrl: 'https://github.com/senbo1/katen-chart',
+    techStack: ['Next.js', 'TailwindCSS', 'Shadcn UI'],
   },
   {
     title: 'Madrid Software',
-    description: 'A landing page for a software company',
-    link: 'https://madridsoftware.vercel.app',
+    description: 'A landing page for company',
+    demoUrl: 'https://madridsoftware.vercel.app',
+    githubUrl: 'https://github.com/senbo1/madridsoftware',
+    techStack: ['React', 'TailwindCSS', 'Shadcn UI'],
   },
 ] satisfies Project[];
 

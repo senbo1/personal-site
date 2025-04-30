@@ -1,7 +1,9 @@
 export type Project = {
   title: string;
   description: string;
-  link: string;
+  demoUrl: string;
+  githubUrl: string;
+  techStack: string[];
 };
 
 export type Blog = {

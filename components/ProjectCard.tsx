@@ -1,20 +1,36 @@
+import { Project } from '@/lib/types';
+import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
+import Link from 'next/link';
+
 export default function ProjectCard({
   title,
   description,
-  link,
-}: {
-  title: string;
-  description: string;
-  link: string;
-}) {
+  techStack,
+  githubUrl,
+  demoUrl,
+}: Project) {
   return (
-    <a
-      href={link}
-      target="_blank"
-      className="flex flex-col items-center text-center gap-2 border border-foreground/30 p-3 sm:p-2 max-w-md w-full mx-auto"
-    >
-      <h3 className="text-lg font-medium">{title}</h3>
+    <div className="relative flex flex-col gap-2 max-w-prose w-full">
+      <div className="flex justify-between items-center">
+        <h3 className="text-lg font-medium">{title}</h3>
+        <div className="cursor-pointer flex gap-2">
+          <Link href={githubUrl} target="_blank">
+            <GithubIcon className="w-5 h-5 text-muted-foreground" />
+          </Link>
+          <Link href={demoUrl} target="_blank">
+            <ExternalLinkIcon className="w-5 h-5 text-muted-foreground" />
+          </Link>
+        </div>
+      </div>
+
       <p className="text-sm text-muted-foreground">{description}</p>
-    </a>
+      <div className="flex flex-wrap gap-2">
+        {techStack.map((tech) => (
+          <span key={tech} className="text-sm text-muted-foreground">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }

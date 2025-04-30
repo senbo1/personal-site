@@ -22,10 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.className} antialiased min-h-screen max-w-prose mx-auto px-4 md:px-0 duration-200`}
+        className={`${poppins.className} antialiased min-h-svh max-w-prose mx-auto px-4 md:px-0`}
       >
         <PostHogProvider>
-          <ThemeProvider attribute="class" defaultTheme="system">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
             {children}
           </ThemeProvider>
         </PostHogProvider>
