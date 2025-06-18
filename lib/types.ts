@@ -3,7 +3,6 @@ export type Project = {
   description: string;
   demoUrl: string;
   githubUrl: string;
-  techStack: string[];
 };
 
 export type Blog = {

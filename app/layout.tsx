@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { PostHogProvider } from '@/components/PostHogProvider';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -24,16 +23,14 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased min-h-svh max-w-prose mx-auto px-4 md:px-0`}
       >
-        <PostHogProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </PostHogProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

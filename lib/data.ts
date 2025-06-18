@@ -2,18 +2,28 @@ import { Blog, Link, Project } from './types';
 
 export const projects = [
   {
+    title: 'chat0',
+    description: 'blazingly fast, free, open source ai chat app',
+    demoUrl: 'https://chat0.space',
+    githubUrl: 'https://github.com/senbo1/chat0',
+  },
+  {
+    title: 'stream-mate',
+    description: 'video chat app with perfect negotiation webRTC',
+    demoUrl: 'https://video.chat0.space',
+    githubUrl: 'https://github.com/senbo1/stream-mate',
+  },
+  {
     title: 'Katen Chart',
     description: 'your favourite seasonal anime tracker',
     demoUrl: 'https://katen-chart.vercel.app',
     githubUrl: 'https://github.com/senbo1/katen-chart',
-    techStack: ['Next.js', 'TailwindCSS', 'Shadcn UI'],
   },
   {
     title: 'Madrid Software',
     description: 'A landing page for company',
     demoUrl: 'https://madridsoftware.vercel.app',
     githubUrl: 'https://github.com/senbo1/madridsoftware',
-    techStack: ['React', 'TailwindCSS', 'Shadcn UI'],
   },
 ] satisfies Project[];
 
