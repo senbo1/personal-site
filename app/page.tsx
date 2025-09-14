@@ -1,8 +1,8 @@
-import BlogCard from '@/components/BlogCard';
-import ProjectCard from '@/components/ProjectCard';
-import { ThemeToggler } from '@/components/ui/ThemeToggler';
-import { blogs, links, projects } from '@/lib/data';
-import Link from 'next/link';
+import BlogCard from "@/components/BlogCard";
+import ProjectCard from "@/components/ProjectCard";
+import { ThemeToggler } from "@/components/ui/ThemeToggler";
+import { blogs, links, projects } from "@/lib/data";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
           <div className="flex flex-col gap-2 items-start">
             <h1 className="text-4xl font-bold">Hi, I am harsh</h1>
             <h2 className="text-lg font-medium">
-              I love building <span className="italic text-red-500">fast</span>{' '}
+              I love building <span className="italic text-red-500">fast</span>{" "}
               and <span className="italic text-green-500">efficient</span> full
               stack applications.
             </h2>
@@ -50,7 +50,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="text-sm text-muted-foreground">
-                May 2025 - Present
+                May 2025 - August 2025
               </div>
             </div>
           </div>
