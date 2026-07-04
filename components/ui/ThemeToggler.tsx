@@ -5,10 +5,22 @@ import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 export function ThemeToggler() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   const handleThemeChange = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    const nextTheme = resolvedTheme === 'dark' ? 'light' : 'dark';
+    const transitionDocument = document as Document & {
+      startViewTransition?: (callback: () => void) => void;
+    };
+
+    if (!transitionDocument.startViewTransition) {
+      setTheme(nextTheme);
+      return;
+    }
+
+    transitionDocument.startViewTransition(() => {
+      setTheme(nextTheme);
+    });
   };
 
   return (

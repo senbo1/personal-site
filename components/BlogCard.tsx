@@ -5,10 +5,10 @@ export default function BlogCard({ title, link, date }: Blog) {
     <a
       href={link}
       target="_blank"
-      className="flex items-center justify-between gap-2"
+      className="flex items-center justify-between gap-2 px-3 py-2 -mx-3 rounded-lg hover:bg-muted/50 border border-transparent hover:border-border transition-colors"
     >
-      <h3 className="text-md sm:text-lg font-medium">{title}</h3>
-      <p className="text-sm sm:text-base text-muted-foreground">{date}</p>
+      <h3 className="text-sm font-medium">{title}</h3>
+      <p className="text-xs text-muted-foreground">{date}</p>
     </a>
   );
 }
