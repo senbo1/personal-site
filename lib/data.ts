@@ -5,7 +5,7 @@ export const workExperiences = [
     title: "rork",
     role: "swe",
     url: "https://rork.com/",
-    period: "October 2025 - Present",
+    period: "October 2025 - May 2026",
     imageUrl: "/rork.webp",
   },
   {
