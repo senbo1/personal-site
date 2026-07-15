@@ -16,7 +16,7 @@ export default function Home() {
               and <span className="italic text-green-500">efficient</span> full
               stack applications.
             </h2>
-            <div className="flex gap-2">
+            <div className="flex gap-4">
               {links.map((link) => (
                 <a
                   href={link.link}

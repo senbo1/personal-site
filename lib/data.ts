@@ -71,4 +71,8 @@ export const links = [
     title: "Email",
     link: "mailto:senbodev@gmail.com",
   },
+  {
+    title: "Resume",
+    link: "https://drive.google.com/file/d/12cj6JKyJEiKgqFUid0bjVZub4yADiHs1/view",
+  },
 ] satisfies Link[];
