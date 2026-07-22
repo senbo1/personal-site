@@ -28,7 +28,7 @@ export const projects = [
   {
     title: "chat0",
     description: "blazingly fast, free, open source ai chat app",
-    demoUrl: "https://chat0.senbocodes.workers.dev/chat",
+    demoUrl: "https://chat0.app",
     githubUrl: "https://github.com/senbo1/chat0",
   },
   {
