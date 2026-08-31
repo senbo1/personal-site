@@ -6,21 +6,18 @@ export const workExperiences = [
     role: "swe",
     url: "https://rork.com/",
     period: "October 2025 - May 2026",
-    imageUrl: "/rork.webp",
   },
   {
     title: "supernova ai",
     role: "swe intern",
     url: "https://play.google.com/store/apps/details?id=live.gosupernova.app&hl=en_IN",
     period: "July 2025 - October 2025",
-    imageUrl: "/supernova.webp",
   },
   {
     title: "google summer of code 2025",
     role: "open source contributor",
     url: "https://summerofcode.withgoogle.com/programs/2025/projects/8dgkuzjy",
     period: "June 2025 - September 2025",
-    imageUrl: "/gsoc.webp",
   },
 ] satisfies WorkExperience[];
 

@@ -3,7 +3,6 @@ export type WorkExperience = {
   role: string;
   url: string;
   period: string;
-  imageUrl?: string;
 };
 
 export type Project = {
