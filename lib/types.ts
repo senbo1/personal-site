@@ -1,16 +1,7 @@
-export type WorkExperience = {
-  title: string;
-  role: string;
-  url: string;
-  period: string;
-};
-
-export type Project = {
+export type CardItem = {
   title: string;
   description: string;
-  demoUrl: string;
-  githubUrl: string;
-  imageUrl?: string;
+  url: string;
 };
 
 export type Blog = {
@@ -22,4 +13,5 @@ export type Blog = {
 export type Link = {
   title: string;
   link: string;
+  icon: string;
 };

@@ -1,46 +1,40 @@
-import { Blog, Link, Project, WorkExperience } from "./types";
+import type { Blog, CardItem, Link } from "./types";
 
 export const workExperiences = [
   {
-    title: "rork",
-    role: "swe",
+    title: "Rork",
+    description: "Contract · 6 months",
     url: "https://rork.com/",
-    period: "October 2025 - May 2026",
   },
   {
-    title: "supernova ai",
-    role: "swe intern",
+    title: "Supernova AI",
+    description: "Intern · 3 months",
     url: "https://play.google.com/store/apps/details?id=live.gosupernova.app&hl=en_IN",
-    period: "July 2025 - October 2025",
   },
   {
-    title: "google summer of code 2025",
-    role: "open source contributor",
+    title: "Google Summer of Code 2025",
+    description: "GSoC Contributor · 4 months",
     url: "https://summerofcode.withgoogle.com/programs/2025/projects/8dgkuzjy",
-    period: "June 2025 - September 2025",
   },
-] satisfies WorkExperience[];
+] satisfies CardItem[];
 
 export const projects = [
   {
-    title: "chat0",
+    title: "Chat0",
     description: "blazingly fast, free, open source ai chat app",
-    demoUrl: "https://chat0.app",
-    githubUrl: "https://github.com/senbo1/chat0",
+    url: "https://chat0.app",
   },
   {
-    title: "stream-mate",
+    title: "Stream Mate",
     description: "video chat app with perfect negotiation webRTC",
-    demoUrl: "https://stream-mate.senbocodes.workers.dev",
-    githubUrl: "https://github.com/senbo1/stream-mate",
+    url: "https://stream-mate.senbocodes.workers.dev",
   },
   {
     title: "Katen Chart",
     description: "your favourite seasonal anime tracker",
-    demoUrl: "https://katen-chart.vercel.app",
-    githubUrl: "https://github.com/senbo1/katen-chart",
+    url: "https://katen-chart.vercel.app",
   },
-] satisfies Project[];
+] satisfies CardItem[];
 
 export const blogs = [
   {
@@ -59,17 +53,16 @@ export const links = [
   {
     title: "Twitter",
     link: "https://x.com/senbodev",
+    icon: "/x.svg",
   },
   {
     title: "Github",
     link: "https://github.com/senbo1",
+    icon: "/github.svg",
   },
   {
     title: "Email",
     link: "mailto:senbodev@gmail.com",
-  },
-  {
-    title: "Resume",
-    link: "https://drive.google.com/file/d/12cj6JKyJEiKgqFUid0bjVZub4yADiHs1/view",
+    icon: "/mail.svg",
   },
 ] satisfies Link[];
