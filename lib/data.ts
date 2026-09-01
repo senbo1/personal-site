@@ -13,7 +13,7 @@ export const workExperiences = [
   },
   {
     title: "Google Summer of Code 2025",
-    description: "GSoC Contributor · 4 months",
+    description: "Contributor · 4 months",
     url: "https://summerofcode.withgoogle.com/programs/2025/projects/8dgkuzjy",
   },
 ] satisfies CardItem[];
@@ -26,7 +26,7 @@ export const projects = [
   },
   {
     title: "Stream Mate",
-    description: "video chat app with perfect negotiation webRTC",
+    description: "video chat app with webRTC",
     url: "https://stream-mate.senbocodes.workers.dev",
   },
   {
