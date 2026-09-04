@@ -10,10 +10,7 @@ export default function Card({ title, description, url }: CardItem) {
       href={url}
       target="_blank"
       onClick={() => {
-        if (
-          process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
-          process.env.NEXT_PUBLIC_POSTHOG_HOST
-        ) {
+        if (process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN) {
           posthog.capture("portfolio_item_clicked", { item_title: title });
         }
       }}

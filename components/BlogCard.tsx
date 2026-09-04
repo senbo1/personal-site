@@ -9,10 +9,7 @@ export default function BlogCard({ title, link, date }: Blog) {
       href={link}
       target="_blank"
       onClick={() => {
-        if (
-          process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
-          process.env.NEXT_PUBLIC_POSTHOG_HOST
-        ) {
+        if (process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN) {
           posthog.capture("blog_post_clicked", { post_title: title });
         }
       }}

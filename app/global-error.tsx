@@ -11,10 +11,7 @@ export default function GlobalError({
   reset: () => void;
 }>) {
   useEffect(() => {
-    if (
-      process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
-      process.env.NEXT_PUBLIC_POSTHOG_HOST
-    ) {
+    if (process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN) {
       posthog.captureException(error);
     }
   }, [error]);

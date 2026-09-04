@@ -13,10 +13,7 @@ export default function IconLink({ title, link, icon }: LinkData) {
       aria-label={title}
       title={title}
       onClick={() => {
-        if (
-          process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
-          process.env.NEXT_PUBLIC_POSTHOG_HOST
-        ) {
+        if (process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN) {
           posthog.capture("social_link_clicked", { destination: title });
         }
       }}
