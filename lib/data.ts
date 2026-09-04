@@ -1,4 +1,139 @@
-import type { Blog, CardItem, Link } from "./types";
+import {
+  siCloudflare,
+  siDocker,
+  siExpo,
+  siGo,
+  siMongodb,
+  siNextdotjs,
+  siPostgresql,
+  siReact,
+  siTailwindcss,
+  siTypescript,
+} from "simple-icons";
+
+import { awsIconPath } from "./icons/aws";
+import type { Blog, CardItem, Link, StackItem } from "./types";
+
+export const bookingLink = {
+  label: "Book intro",
+  href: "https://cal.com/senbo",
+};
+
+export const messageLink = {
+  label: "Message on X",
+  href: "https://x.com/messages/compose?recipient_id=1714698585776734208",
+};
+
+export const currentStack = [
+  {
+    name: "TypeScript",
+    href: "https://www.typescriptlang.org/",
+    icon: {
+      path: siTypescript.path,
+      size: "regular",
+      colors: {
+        light: `#${siTypescript.hex}`,
+        dark: `#${siTypescript.hex}`,
+      },
+    },
+  },
+  {
+    name: "React",
+    href: "https://react.dev/",
+    icon: {
+      path: siReact.path,
+      size: "regular",
+      colors: { light: `#${siReact.hex}`, dark: `#${siReact.hex}` },
+    },
+  },
+  {
+    name: "Next.js",
+    href: "https://nextjs.org/",
+    icon: {
+      path: siNextdotjs.path,
+      size: "regular",
+      colors: { light: `#${siNextdotjs.hex}`, dark: "#FFFFFF" },
+    },
+  },
+  {
+    name: "Expo",
+    href: "https://expo.dev/",
+    icon: {
+      path: siExpo.path,
+      size: "regular",
+      colors: { light: `#${siExpo.hex}`, dark: "#FFFFFF" },
+    },
+  },
+  {
+    name: "Go",
+    href: "https://go.dev/",
+    icon: {
+      path: siGo.path,
+      size: "large",
+      colors: { light: `#${siGo.hex}`, dark: `#${siGo.hex}` },
+    },
+  },
+  {
+    name: "Tailwind CSS",
+    href: "https://tailwindcss.com/",
+    icon: {
+      path: siTailwindcss.path,
+      size: "large",
+      colors: {
+        light: `#${siTailwindcss.hex}`,
+        dark: `#${siTailwindcss.hex}`,
+      },
+    },
+  },
+  {
+    name: "Postgres",
+    href: "https://www.postgresql.org/",
+    icon: {
+      path: siPostgresql.path,
+      size: "large",
+      colors: {
+        light: `#${siPostgresql.hex}`,
+        dark: `#${siPostgresql.hex}`,
+      },
+    },
+  },
+  {
+    name: "MongoDB",
+    href: "https://www.mongodb.com/",
+    icon: {
+      path: siMongodb.path,
+      size: "large",
+      colors: { light: `#${siMongodb.hex}`, dark: `#${siMongodb.hex}` },
+    },
+  },
+  {
+    name: "Docker",
+    href: "https://www.docker.com/",
+    icon: {
+      path: siDocker.path,
+      size: "large",
+      colors: { light: `#${siDocker.hex}`, dark: `#${siDocker.hex}` },
+    },
+  },
+  {
+    name: "AWS",
+    href: "https://aws.amazon.com/",
+    icon: {
+      path: awsIconPath,
+      size: "large",
+      colors: { light: "#232F3E", dark: "#FFFFFF" },
+    },
+  },
+  {
+    name: "Cloudflare",
+    href: "https://www.cloudflare.com/",
+    icon: {
+      path: siCloudflare.path,
+      size: "large",
+      colors: { light: `#${siCloudflare.hex}`, dark: `#${siCloudflare.hex}` },
+    },
+  },
+] satisfies StackItem[];
 
 export const workExperiences = [
   {

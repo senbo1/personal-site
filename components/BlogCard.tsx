@@ -16,10 +16,10 @@ export default function BlogCard({ title, link, date }: Blog) {
           posthog.capture("blog_post_clicked", { post_title: title });
         }
       }}
-      className="flex items-center justify-between gap-2 px-3 py-2 -mx-3 rounded-lg hover:bg-muted border border-transparent"
+      className="-mx-3 flex flex-col items-start gap-0.5 rounded-lg border border-transparent px-3 py-2 hover:bg-muted sm:flex-row sm:items-center sm:justify-between sm:gap-2"
     >
       <h3 className="text-sm font-medium">{title}</h3>
-      <p className="text-xs text-muted-foreground">{date}</p>
+      <p className="shrink-0 text-xs text-muted-foreground">{date}</p>
     </a>
   );
 }

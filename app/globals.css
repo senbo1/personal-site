@@ -29,6 +29,7 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -67,6 +68,53 @@
   }
 }
 
+@layer components {
+  .stack-icon-link {
+    animation: stack-icon-enter 240ms var(--ease-out) backwards;
+    animation-delay: var(--stack-icon-delay);
+    transition:
+      color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .stack-icon-link:focus-visible {
+    animation: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .stack-icon-link:hover {
+      color: var(--stack-icon-color);
+      transform: translateY(-10%) scale(1.05);
+    }
+
+    .dark .stack-icon-link:hover {
+      color: var(--stack-icon-color-dark);
+    }
+  }
+}
+
+@keyframes stack-icon-enter {
+  from {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stack-icon-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -87,7 +135,19 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .stack-icon-link {
+    animation: stack-icon-fade-in 200ms ease backwards;
+    animation-delay: 0ms;
+    transition: color 160ms ease;
+  }
+
   ::view-transition-new(root) {
     animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
+  .stack-icon-link:hover {
+    transform: none;
   }
 }

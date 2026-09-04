@@ -17,10 +17,10 @@ export default function Card({ title, description, url }: CardItem) {
           posthog.capture("portfolio_item_clicked", { item_title: title });
         }
       }}
-      className="flex items-center gap-2 px-3 py-1.5 -mx-3 rounded-lg hover:bg-muted border border-transparent"
+      className="-mx-3 flex flex-col items-start gap-0.5 rounded-lg border border-transparent px-3 py-1.5 hover:bg-muted sm:flex-row sm:items-center sm:gap-2"
     >
       <h3 className="shrink-0 text-sm font-medium">{title}</h3>
-      <p className="min-w-0 flex-1 truncate text-right text-sm text-muted-foreground">
+      <p className="min-w-0 text-sm text-muted-foreground sm:flex-1 sm:truncate sm:text-right">
         {description}
       </p>
     </Link>

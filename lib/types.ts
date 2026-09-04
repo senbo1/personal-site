@@ -15,3 +15,16 @@ export type Link = {
   link: string;
   icon: string;
 };
+
+export type StackItem = {
+  name: string;
+  href: string;
+  icon: {
+    path: string;
+    size: "regular" | "large";
+    colors: {
+      light: string;
+      dark: string;
+    };
+  };
+};
