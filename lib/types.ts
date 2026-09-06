@@ -6,8 +6,8 @@ export type CardItem = {
 
 export type Blog = {
   title: string;
-  link: string;
-  date: string;
+  url: string;
+  description: string;
 };
 
 export type Link = {
@@ -16,15 +16,3 @@ export type Link = {
   icon: string;
 };
 
-export type StackItem = {
-  name: string;
-  href: string;
-  icon: {
-    path: string;
-    size: "regular" | "large";
-    colors: {
-      light: string;
-      dark: string;
-    };
-  };
-};
